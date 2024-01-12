@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array</title>
+    <title>Array Mini Mart</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="bootstrap.js">
 </head>
+
 <body>
     <div class="container-fluid mx-auto bg-primary-subtle col-lg-7 col-10 shadow-sm mt-lg-5 mt-2 p-3">
         <h1 class="text-center text-primary text-decoration-underline my-3">MINI MART</h1>
@@ -15,22 +18,29 @@
     </div>
 
     <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" id="show"></div>
-    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3 d-none" id="wrapper">
-        <marquee behavior="" direction="">Note that indexing starts from 0, i.e The First On The List Is Index 0</marquee>
-        <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index">
-        <input type="text" class="form-control-sm form-control my-2 shadow-none" placeholder="Change To">
+
+    <!------------------------------ Edit Input ----------------------------------------------->
+    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" style="display: none;" id="containerEdit">
+        <p id="p">Note that indexing starts from 0, i.e The First On The List Is Index 0
+        </p>
+        <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index" id="inputa">
+        <input type="text" class="form-control-sm form-control my-2 shadow-none" placeholder="Change To" id="inputb">
+        <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="updateItem()">Update Item</button>
     </div>
-    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3 d-none" id="wrappers">
+    <!-- ----------------------------- Delete Input -------------------------------------------->
+    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" style="display: none;" id="wrapper">
         <marquee behavior="" direction="">Note that indexing starts from 0, i.e The First On The List Is Index 0</marquee>
-        <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index">
-        <input type="text" class="form-control-sm form-control my-2 shadow-none" placeholder="What To Delete">
+        <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index" id="firstInput">
+        <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="removeItem()">Remove Item</button>
     </div>
+
+    <!-- ------------------------------ Array Buttons ------------------------------------------>
     <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3">
         <button class="btn btn-sm btn-primary mx-2 my-2" onclick="addFirst()">Add To First</button>
         <button class="btn btn-sm btn-danger mx-2 my-2" onclick="deleteFirst()">Delete First</button>
         <button class="btn btn-sm btn-success mx-2 my-2" onclick="deleteLast()">Delete Last</button>
-        <button class="btn btn-sm btn-secondary mx-2 my-2" onclick="deleteAny()">Delete Any</button>
-        <button class="btn btn-sm btn-info mx-2 my-2" onclick="editAny()">Edit</button>
+        <button class="btn btn-sm btn-info mx-2 my-2" onclick="editAny()" id="showInput">Edit</button>
+        <button class="btn btn-sm btn-secondary mx-2 my-2" onclick="deleteAny()" id="displayInput">Delete Any</button>
         <button class="btn btn-sm btn-dark mx-2 my-2" onclick="deleteAll()">Delete All</button>
     </div>
     <!-- <table border="1" id="disp"></table> -->
@@ -38,4 +48,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

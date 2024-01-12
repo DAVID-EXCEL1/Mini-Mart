@@ -67,8 +67,55 @@ function deleteLast() {
     }
 }
 
-function deleteAny(){
 
+function editAny(){
+    // document.getElementById("showInput").addEventListener("click",
+    // function(){
+    //     var containerEdit = document.getElementById("containerEdit");
+        
+    // }
+    // )
+    containerEdit.style.display = containerEdit.style.display === "none" ? "block" : "none";
+    // containerEdit.style.display = "block"
+
+}
+
+function updateItem(){
+    var inputOne = document.getElementById('inputa').value
+    var inputTwo = document.getElementById('inputb').value
+    console.log(purchase.splice(inputa.value, 1, inputb.value));
+    console.log(purchase);
+    displayPurchase()
+    if (inputa.value == '' && inputb.value == ''){
+        console.error("Fill in the spaces");
+        alert("Fill in the spaces");
+        document.getElementById("containerEdit").innerHTML = ''
+    }
+    document.getElementById('inputa').value = ''
+    document.getElementById('inputb').value = ''
+}
+
+
+function deleteAny(){
+    wrapper.style.display = wrapper.style.display === "none" ? "block" : "none";
+}
+
+
+function removeItem(){
+    var input1st = document.getElementById('firstInput').value
+    console.log(purchase.splice(firstInput.value, 1));
+    console.log(purchase);
+    displayPurchase()
+    if (firstInput.value == ''){
+        console.error("Fill in the spaces");
+        alert("Fill in the spaces");
+        document.getElementById("wrapper").innerHTML = ''
+    }
+    if (firstInput.value >= purchase.length){
+        console.error("Indexing Starts From ZERO");
+        alert("Indexing Starts From ZERO")
+    }
+    document.getElementById('firstInput').value = ''
 }
 
 
