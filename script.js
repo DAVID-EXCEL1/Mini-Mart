@@ -75,59 +75,15 @@ function deleteLast() {
 }
 
 
-function editAny() {
-    // document.getElementById("showInput").addEventListener("click",
-    // function(){
-    //     var containerEdit = document.getElementById("containerEdit");
-
-    // }
-    // )
-    containerEdit.style.display = containerEdit.style.display === "none" ? "block" : "none";
-    document.getElementById('wrapper').value = '';
-    // containerEdit.style.display = "block"
-
-}
-
-function updateItem() {
-    var inputOne = document.getElementById('inputa').value;
-    var inputTwo = document.getElementById('inputb').value;
-    var indexNew = Number(inputOne) - 1;
-    purchase.splice(inputOne-1, 1, inputTwo);
-    console.log(purchase);
-    displayPurchase();
-    if (inputOne == '' && inputTwo == '') {
-        console.error("Fill in the spaces");
-        alert("Fill in the spaces");
-        document.getElementById("containerEdit").innerHTML = '';
-    }
-    document.getElementById('inputOne').value = '';
-    document.getElementById('inputTwo').value = '';
-}
-
 
 function deleteAny() {
-    wrapper.style.display = wrapper.style.display === "none" ? "block" : "none";
-    document.getElementById('containerEdit').value = '';
-}
-
-
-function removeItem() {
-    var input1st = document.getElementById('firstInput').value;
-    var newIndex = Number(input1st) - 1;
-    if (input1st == '') {
-        console.error("Fill in the spaces");
-        alert("Fill in the spaces");
-        document.getElementById("wrapper").innerHTML = '';
-    } else {
-        if (input1st > purchase.length) {
-            console.error("Indexing Starts From ZERO");
-            alert("Indexing Starts From ZERO");
-        } else {
-            purchase.splice(newIndex-1, 1);
-            console.log(purchase);
-            displayPurchase();
-        }
-        document.getElementById('input1st').value = '';
+    var num = Number(document.getElementById("deleteInput").value)
+    if (inp === "") {
+        alert("No item to delete")
+    }
+    if(num === 0) {
+        console.error("Please fill the space");
+        inputValue.style.display = "block";
     }
 }
 
@@ -144,7 +100,7 @@ function deleteAll() {
 }
 
 tab += "</table>"
-    dispDiv.innerHTML = tab
-    dispDiv.style.color = "white"
-    document.getElementById("rowNumber").value = ""
-    document.getElementById("colNumber").value = ""
+dispDiv.innerHTML = tab
+dispDiv.style.color = "white"
+document.getElementById("rowNumber").value = ""
+document.getElementById("colNumber").value = ""

@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="bootstrap.js">
 </head>
 <body>
-    <button onclick="myName('Dave', 20)" class="btn btn-success">Dave</button>
-    <button onclick="myName('David', 21)" class="btn btn-success">David</button>
-    <button onclick="myName('Excel', 22)" class="btn btn-success">Excel</button>
-    <button onclick="myName('OLUWATAYO', 23)" class="btn btn-success">OLUWATAYO</button>
+    <div id="all" class="mx-auto bg-success-subtle container-fluid col-lg-5 col-sm-10 my-2">
+        <div id="disp"></div>
+        <button onclick="myName('Dave', 20)" class="btn btn-success mx-2 my-2">Dave</button>
+        <button onclick="myName('David', 21)" class="btn btn-success me-2 my-2">David</button>
+        <button onclick="myName('Excel', 22)" class="btn btn-success me-2 my-2">Excel</button>
+        <button onclick="myName('OLUWATAYO', 23)" class="btn btn-success me-2 my-2">OLUWATAYO</button>
+    </div>
 
 
 
@@ -20,6 +23,7 @@
     <script>
 function myName(name, age){
     console.log(`My Name is ${name} and my age is ${age}`);
+    show.innerHTML = `My Name is ${name} and my age is ${age}`
 }
     </script>
 </body>

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="bootstrap.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,22 +19,9 @@
         <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="addItems()">Submit</button>
     </div>
 
-    <table class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" id="show" style="border: 1px solid blue;"></table>
+    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" id="show">
+    </div>
 
-    <!------------------------------ Edit Input ----------------------------------------------->
-    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" style="display: none;" id="containerEdit">
-        <p id="para">Note that indexing starts from 0, i.e The First On The List Is Index 0
-        </p>
-        <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index" id="inputa">
-        <input type="text" class="form-control-sm form-control my-2 shadow-none" placeholder="Change To" id="inputb">
-        <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="updateItem()">Update Item</button>
-    </div>
-    <!-- ----------------------------- Delete Input -------------------------------------------->
-    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" style="display: none;" id="wrapper">
-        <p id="para">Note that indexing starts from 0, i.e The First On The List Is Index 0</p>
-        <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index" id="firstInput">
-        <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="removeItem()">Remove Item</button>
-    </div>
 
     <!-- ------------------------------ Array Buttons ------------------------------------------>
     <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3">
@@ -40,13 +29,34 @@
         <button class="btn btn-sm btn-danger mx-2 my-2" onclick="deleteFirst()">Delete First</button>
         <button class="btn btn-sm btn-success mx-2 my-2" onclick="deleteLast()">Delete Last</button>
         <button class="btn btn-sm btn-info mx-2 my-2" onclick="editAny()" id="showInput">Edit</button>
-        <button class="btn btn-sm btn-secondary mx-2 my-2" onclick="deleteAny()" id="displayInput">Delete Any</button>
+        <button class="btn btn-sm btn-secondary mx-2 my-2"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="displayInput">Delete Any</button>
         <button class="btn btn-sm btn-dark mx-2 my-2" onclick="deleteAll()">Delete All</button>
     </div>
-    <!-- <table border="1" id="disp"></table> -->
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enter the item number</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger p-1 mb-2 mx-auto" style="display: none;" id="inputValue">Please Fill In The Space</div>
+                    <div class="alert alert-success p-1 mb-2 mx-auto" style="display: none;" id="deleteValue">Please Fill In The Space</div>
+                    <input type="number" class="form-control form-control-sm shadow-none" id="deleteInput" placeholder="Enter the item number">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="deleteAny()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
