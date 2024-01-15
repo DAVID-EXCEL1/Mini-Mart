@@ -10,6 +10,8 @@
 
 var purchase = [];
 console.log(purchase);
+var tabRow = rowNumber.value;
+var tabColumn = colNumber.value;
 
 function displayPurchase() {
     show.innerHTML = "";
@@ -24,7 +26,12 @@ function addItems() {
         purchase.push(inp.value);
         document.getElementById('inp').value = '';
         console.log(purchase);
+        var tab = "<table>"
+        tab += "<tr>"
         displayPurchase()
+        tab += i + sign + j + "=" + calcValue + "<br>" + "<br>";
+        tab += "<td>"
+
     } else {
         alert("Fill in something");
         console.error("It's Empty");
@@ -68,64 +75,76 @@ function deleteLast() {
 }
 
 
-function editAny(){
+function editAny() {
     // document.getElementById("showInput").addEventListener("click",
     // function(){
     //     var containerEdit = document.getElementById("containerEdit");
-        
+
     // }
     // )
     containerEdit.style.display = containerEdit.style.display === "none" ? "block" : "none";
+    document.getElementById('wrapper').value = '';
     // containerEdit.style.display = "block"
 
 }
 
-function updateItem(){
-    var inputOne = document.getElementById('inputa').value
-    var inputTwo = document.getElementById('inputb').value
-    console.log(purchase.splice(inputa.value, 1, inputb.value));
+function updateItem() {
+    var inputOne = document.getElementById('inputa').value;
+    var inputTwo = document.getElementById('inputb').value;
+    var indexNew = Number(inputOne) - 1;
+    purchase.splice(inputOne-1, 1, inputTwo);
     console.log(purchase);
-    displayPurchase()
-    if (inputa.value == '' && inputb.value == ''){
+    displayPurchase();
+    if (inputOne == '' && inputTwo == '') {
         console.error("Fill in the spaces");
         alert("Fill in the spaces");
-        document.getElementById("containerEdit").innerHTML = ''
+        document.getElementById("containerEdit").innerHTML = '';
     }
-    document.getElementById('inputa').value = ''
-    document.getElementById('inputb').value = ''
+    document.getElementById('inputOne').value = '';
+    document.getElementById('inputTwo').value = '';
 }
 
 
-function deleteAny(){
+function deleteAny() {
     wrapper.style.display = wrapper.style.display === "none" ? "block" : "none";
+    document.getElementById('containerEdit').value = '';
 }
 
 
-function removeItem(){
-    var input1st = document.getElementById('firstInput').value
-    console.log(purchase.splice(firstInput.value, 1));
-    console.log(purchase);
-    displayPurchase()
-    if (firstInput.value == ''){
+function removeItem() {
+    var input1st = document.getElementById('firstInput').value;
+    var newIndex = Number(input1st) - 1;
+    if (input1st == '') {
         console.error("Fill in the spaces");
         alert("Fill in the spaces");
-        document.getElementById("wrapper").innerHTML = ''
+        document.getElementById("wrapper").innerHTML = '';
+    } else {
+        if (input1st > purchase.length) {
+            console.error("Indexing Starts From ZERO");
+            alert("Indexing Starts From ZERO");
+        } else {
+            purchase.splice(newIndex-1, 1);
+            console.log(purchase);
+            displayPurchase();
+        }
+        document.getElementById('input1st').value = '';
     }
-    if (firstInput.value >= purchase.length){
-        console.error("Indexing Starts From ZERO");
-        alert("Indexing Starts From ZERO")
-    }
-    document.getElementById('firstInput').value = ''
 }
 
 
 function deleteAll() {
     if (inp.value === '') {
-        purchase.splice(0, purchase.length)
+        purchase.splice(0, purchase.length);
         console.log(purchase);
-        displayPurchase()
+        displayPurchase();
     } else {
         alert("Fill in something");
         console.error("It's Empty");
     }
 }
+
+tab += "</table>"
+    dispDiv.innerHTML = tab
+    dispDiv.style.color = "white"
+    document.getElementById("rowNumber").value = ""
+    document.getElementById("colNumber").value = ""

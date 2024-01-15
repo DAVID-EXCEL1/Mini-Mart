@@ -17,11 +17,11 @@
         <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="addItems()">Submit</button>
     </div>
 
-    <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" id="show"></div>
+    <table class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" id="show" style="border: 1px solid blue;"></table>
 
     <!------------------------------ Edit Input ----------------------------------------------->
     <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" style="display: none;" id="containerEdit">
-        <p id="p">Note that indexing starts from 0, i.e The First On The List Is Index 0
+        <p id="para">Note that indexing starts from 0, i.e The First On The List Is Index 0
         </p>
         <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index" id="inputa">
         <input type="text" class="form-control-sm form-control my-2 shadow-none" placeholder="Change To" id="inputb">
@@ -29,7 +29,7 @@
     </div>
     <!-- ----------------------------- Delete Input -------------------------------------------->
     <div class="container-fluid mx-auto col-lg-7 bg-primary-subtle col-10 my-4 shadow-sm p-3" style="display: none;" id="wrapper">
-        <marquee behavior="" direction="">Note that indexing starts from 0, i.e The First On The List Is Index 0</marquee>
+        <p id="para">Note that indexing starts from 0, i.e The First On The List Is Index 0</p>
         <input type="number" class="form-control-sm form-control my-2 shadow-none" placeholder="Index" id="firstInput">
         <button class="w-100 btn btn-outline-primary my-2 btn-sm" onclick="removeItem()">Remove Item</button>
     </div>

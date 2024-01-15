@@ -4,17 +4,16 @@
     box-sizing: border-box;
 }
 
-#p {
-    animation: p 10s infinite linear ease-in-out;
-    color: indianred;
+#para {
+    animation: para 10s infinite linear ease-in-out;
+    color: rgb(240, 36, 36);
 }
 
-@keyframes p {
-    0% {
-        transform: translateX(-500px);
+@keyframes para {
+    from {
+        transform: translate(-500px, 0px);
     }
-
-    100% {
-        transform: translateX(500px);
+    to {
+        transform: translate(500px, 0px);
     }
 }
